@@ -6,7 +6,7 @@ import os
 if __name__ == "__main__":
     poker = Poker()
     while True:
-        # Gets the a new hand from the Poker class using the 52 card deck imported from cards
+        # Get a new hand from the Poker class using the 52 card deck imported from cards
         hand = poker.deal_cards(cards)
         # Sanitize the hand to contain A, J, Q, K
         card_suits = poker.replace_to_suits(hand)
