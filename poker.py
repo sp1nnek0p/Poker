@@ -183,11 +183,12 @@ class Poker():
         return card_numbers
         
 
-    def deal_cards(self, cards: list) -> list:
+    def deal_cards(self, cards: list, num_players: int = 1) -> list:
         """
-        Accepts a list of all cards in a 52 deck
-        Selects a random hand from the 52 cards
-        Returns your hand as a list
+        Accepts a list of all cards in a 52 deck, and amount of players
+        Selects a random hands from the 52 card deck for the amount of players
+        Max players is 7, if players is more than 1 will return a matrix of lists
+        Else just Returns your hand as a list
         """
         # Make a copy of the list of cards that get passed to this function
         # Shuffle the copy of the cards 
