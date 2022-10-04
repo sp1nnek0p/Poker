@@ -196,7 +196,6 @@ class Poker():
         cards_copy = cards.copy()
         self.hand = []
         for _ in range(5):
-            random.shuffle(cards_copy)
             self.selection = random.choice(cards_copy)
             cards_copy.pop(cards_copy.index(self.selection))
             self.hand.append(self.selection)
