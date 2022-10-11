@@ -1,5 +1,5 @@
 """
-    Testing the dealer from the poker class
+    Testing the dealer prom the poker class
 """
 
 from poker import Poker
