@@ -195,9 +195,21 @@ class Poker():
         # Picks a random card and removes it from the deck and then choose another card
         # from the remainder of the deck to ensure no duplicates are picked
         cards_copy = cards.copy()
-        self.hand = []
-        for _ in range(5):
-            self.selection = random.choice(cards_copy)
-            cards_copy.pop(cards_copy.index(self.selection))
-            self.hand.append(self.selection)
-        return self.hand
+        if num_players == 1:
+            self.hand = []
+            for _ in range(5):
+                self.selection = random.choice(cards_copy)
+                cards_copy.pop(cards_copy.index(self.selection))
+                self.hand.append(self.selection)
+            return self.hand
+        elif num_players < 6:
+            self.all_players = []
+            for _ in range(num_players):
+                self.hand = []
+                for _ in range(5):
+                    self.selection = random.choice(cards_copy)
+                    cards_copy.pop(cards_copy.index(self.selection))
+                    self.hand.append(self.selection)
+                self.all_players.append(self.hand)
+
+            return self.all_players
