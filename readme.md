@@ -10,4 +10,7 @@ The Script will shuffle a standard 52 deck of cards and display your hand on the
 ## Future Plans
 
 I would like to incorporate a game vs the computer, that checks various use cases for higher cards.
-Improve the Dealer to be more realistic in the Poker class
+
+- Improve the Dealer to be more realistic in the Poker class
+- Improve the main loop, to ask if you would like to play agianst the computer.
+- Display the Name of the Player then the hand and then the result as >"Mark -> 2♥ 2♣ 3♦ 3♥ 3♠ -> Full House"
