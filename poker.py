@@ -185,24 +185,20 @@ class Poker():
 
     def deal_cards(self, cards: list, num_players: int = 1) -> list:
         """
-        Accepts a list of all cards in a 52 deck, and amount of players
+        Accepts a list of all cards in a 52 card deck, and amount of players
         Selects a random hands from the 52 card deck for the amount of players
-        Max players is 7, if players is more than 1 will return a matrix of lists
-        Else just Returns your hand as a list
+        Max players is 5, if players is more than 1 and less than 6 will return a 
+        list of lists(hands)
+        Else just Returns 1 hand as a list
         """
         # Make a copy of the list of cards that get passed to this function
         # Shuffle the copy of the cards 
         # Picks a random card and removes it from the deck and then choose another card
         # from the remainder of the deck to ensure no duplicates are picked
         cards_copy = cards.copy()
-        if num_players == 1:
-            self.hand = []
-            for _ in range(5):
-                self.selection = random.choice(cards_copy)
-                cards_copy.pop(cards_copy.index(self.selection))
-                self.hand.append(self.selection)
-            return self.hand
-        elif num_players < 6:
+        # Very crude way to draw the cards for the num of players
+        # TODO: Improve this to be more realistic
+        if num_players > 1 and num_players < 6:
             self.all_players = []
             for _ in range(num_players):
                 self.hand = []
@@ -211,5 +207,11 @@ class Poker():
                     cards_copy.pop(cards_copy.index(self.selection))
                     self.hand.append(self.selection)
                 self.all_players.append(self.hand)
-
             return self.all_players
+        else:
+            self.hand = []
+            for _ in range(5):
+                self.selection = random.choice(cards_copy)
+                cards_copy.pop(cards_copy.index(self.selection))
+                self.hand.append(self.selection)
+            return self.hand
