@@ -7,9 +7,9 @@ import random
 class Poker():
     def _straight_flush(self, hand: list) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains a straight flush
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains a straight flush
+            Returns Bool
         """
         # A straight flush is a hand that contains five cards of sequential rank
         if self._flush(hand) and self._straight(hand):
@@ -19,9 +19,9 @@ class Poker():
 
     def _four_of_kind(self, hand: list ) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains four of a kind
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains four of a kind
+            Returns Bool
         """
         # Four of a kind, also known as quads, is a hand that contains 
         # four cards of one rank and one card of another rank 
@@ -37,9 +37,9 @@ class Poker():
 
     def _full_house(self, hand) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains a full house
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains a full house
+            Returns Bool
         """
         # A full house, also known as a full boat or a tight or a boat 
         # (and originally called a full hand), is a hand that contains 
@@ -56,9 +56,9 @@ class Poker():
 
     def _flush(self, hand: list) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains a flush
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains a flush
+            Returns Bool
         """
         # A flush is a hand that contains five cards all of the same suit
         card_suits = [i[-1] for i in hand]
@@ -70,9 +70,9 @@ class Poker():
 
     def _straight(self, hand: list) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains a straight
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains a straight
+            Returns Bool
         """
         # A straight is a hand that contains five cards of sequential rank
         card_numbers = sorted([int(i[:-1]) for i in hand])
@@ -85,9 +85,9 @@ class Poker():
 
     def _three_of_kind(self, hand) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains three of a kind
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains three of a kind
+            Returns Bool
         """
         # Three of a kind, also known as trips or a set, is a hand that 
         # contains three cards of one rank and two cards of two other ranks
@@ -103,9 +103,9 @@ class Poker():
 
     def _two_pair(self, hand) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains two pairs
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains two pairs
+            Returns Bool
         """
         # Two pair is a hand that contains two cards of one rank, 
         # two cards of another rank and one card of a third rank 
@@ -121,9 +121,9 @@ class Poker():
 
     def _one_pair(self, hand) -> bool:
         """
-        Takes in a hand of cards as a list
-        Checks if the hand contains at least one pair
-        Returns Bool
+            Takes in a hand of cards as a list
+            Checks if the hand contains at least one pair
+            Returns Bool
         """
         # One pair, or simply a pair, is a hand that contains two 
         # cards of one rank and three cards of three other ranks
@@ -138,9 +138,9 @@ class Poker():
 
     def calculate_hand(self, hand: list) -> str:
         """
-        Takes in your hand as a list of cards
-        Evaluates the Poker hand
-        Returns a string of what you have in hand
+            Takes in your hand as a list of cards
+            Evaluates the Poker hand
+            Returns a string of what you have in hand
         """
         if self._straight_flush(hand):
             return 'Straight Flush'
@@ -164,9 +164,9 @@ class Poker():
 
     def replace_to_suits(self, hand: list) -> list:
         """
-        Accepts a list of your hand of cards
-        Replaces 1, 11, 12, 13 with A, J, Q, K respectively
-        Returns your hand with new formating
+            Accepts a list of your hand of cards
+            Replaces 1, 11, 12, 13 with A, J, Q, K respectively
+            Returns your hand with new formating
         """
         card_numbers = []
         for n in hand:
@@ -185,11 +185,11 @@ class Poker():
 
     def deal_cards(self, cards: list, num_players: int = 1) -> list:
         """
-        Accepts a list of all cards in a 52 card deck, and amount of players
-        Selects a random hands from the 52 card deck for the amount of players
-        Max players is 5, if players is more than 1 and less than 6 will return a 
-        list of lists(hands)
-        Else just Returns 1 hand as a list
+            Accepts a list of all cards in a 52 card deck, and amount of players
+            Selects a random hands from the 52 card deck for the amount of players
+            Max players is 5, if players is more than 1 and less than 6 will return a 
+            list of lists(hands)
+            Else just Returns 1 hand as a list
         """
         # Make a copy of the list of cards that get passed to this function
         # Shuffle the copy of the cards 
