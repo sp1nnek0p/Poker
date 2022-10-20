@@ -1,5 +1,5 @@
 from poker import Poker
-from cards import cards
+from cards import cards, replace_to_suits
 import time
 import os
 
@@ -9,7 +9,7 @@ if __name__ == "__main__":
         # Get a new hand from the Poker class using the 52 card deck imported from cards
         hand = poker.deal_cards(cards)
         # Sanitize the hand to contain A, J, Q, K
-        card_suits = poker.replace_to_suits(hand)
+        card_suits = replace_to_suits(hand)
         # Clear the console output
         os.system('cls')
         print("Shuffling . . . Shuffling . . . Shuffling . . .")
